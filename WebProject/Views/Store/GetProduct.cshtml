@@ -1,0 +1,62 @@
+﻿@model WebProject.Domain.Model.Product
+
+@{
+    ViewBag.Title = "Продукт";
+}
+<br /> <br /><br />
+<main style="margin-top:5px; padding-top:4px">
+    <div style="color:darkslategray; margin-top:5px" class="container">
+        <div class="row wow fadeIn">
+            <div style="margin-bottom:4px;" class="col-md-6 text-center">
+                <img height="400" class="img-responsive" src="@Model.ImageUrl" alt="book" />
+            </div>
+            <div style="margin-bottom:4px" class="col-md-6">
+                <div style="padding:4px">
+                    <div style="margin-bottom:3px">
+                        <a href="#">
+                            <span class="btn-primary btn-sm">Book</span>
+                        </a>
+                        <a href="#">
+                            <span class="btn-success btn-sm">C#</span>
+                        </a>
+                        <a href="#">
+                            <span class="btn-info btn-sm">New</span>
+                        </a>
+                    </div>
+
+                    <p style="font-size:28px; font-weight:800; margin-top:5px" class="lead">
+                        <span style="margin-right:5px; color:darkgray">
+                            <del>
+                                500$
+                            </del>
+                        </span>
+                        <span style="margin-right:1px; color:red">
+                            @Model.Price$
+                        </span>
+                    </p>
+                    <p style="font-weight:bold" class="lead">
+                        Description
+                    </p>
+                    <p>
+                        @Model.Description
+                    </p>
+
+                    @using (Html.BeginForm("ToOrder", "Store", FormMethod.Post, new { @class = "form-inline" })){
+                        @Html.HiddenFor(model=> model.ProductId)
+                        @Html.HiddenFor(model=> model.Name)
+                        @Html.HiddenFor(model=> model.Description)
+                        @Html.HiddenFor(model=> model.Price)
+                        @Html.HiddenFor(model=> model.ImageUrl)
+                        @Html.HiddenFor(model=> model.Orders)
+                        <input type="number" name="Count" value="1" aria-label="Search" class="form-control" style="width:100px" />
+                        <button type="submit" class="btn btn-primary">
+                            Buy <i class="glyphicon glyphicon-shopping-cart"></i>
+                        </button>
+                    }
+
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
