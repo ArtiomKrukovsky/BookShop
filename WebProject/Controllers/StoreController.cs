@@ -8,6 +8,7 @@ using WebProject.Domain.Model;
 
 namespace WebProject.Controllers
 {
+    [Authorize]
     public class StoreController : Controller
     {
         private IUnitOfWork context;

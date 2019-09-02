@@ -27,11 +27,11 @@ namespace WebProject.Domain.Model
         [StringLength(5, MinimumLength = 5, ErrorMessage = "Срок состоит 4 цифр")]
         public string DateTo { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
         public Card()
         {
-            Users = new List<User>();
+            Orders = new List<Order>();
         }
     }
 }

@@ -46,11 +46,11 @@ namespace WebProject.Domain.Model
         [DataType(DataType.PhoneNumber)]
         public int Phone { get; set; }
 
-        public ICollection<User> Users { get; set; }
+        public ICollection<Order> Orders { get; set; }
 
         public PurchaseInfo()
         {
-            Users = new List<User>();
+            Orders = new List<Order>();
         }
     }
 }

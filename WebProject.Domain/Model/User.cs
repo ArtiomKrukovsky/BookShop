@@ -21,12 +21,6 @@ namespace WebProject.Domain.Model
         [DataType(DataType.Password)]
         public string Password { get; set; }
 
-        public int CardId { get; set; }
-        public virtual Card Card { get; set; }
-
-        public int PurchaseInfoId { get; set; }
-        public virtual PurchaseInfo PurchaseInfo { get; set; }
-
         public ICollection<Order> Orders { get; set; }
 
         public User()

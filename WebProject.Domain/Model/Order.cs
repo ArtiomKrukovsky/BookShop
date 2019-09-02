@@ -17,6 +17,12 @@ namespace WebProject.Domain.Model
         public int ProductId { get; set; }
         public virtual Product Product { get; set; }
 
+        public int CardId { get; set; }
+        public virtual Card Card { get; set; }
+
+        public int PurchaseInfoId { get; set; }
+        public virtual PurchaseInfo PurchaseInfo { get; set; }
+
         [Display(Name = "Количество")]
         [Required(ErrorMessage = "Введите количество")]
         [Range(0, 10, ErrorMessage = "Достигнуто максимальное кол-во")]
